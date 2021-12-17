@@ -1,9 +1,5 @@
 @font-face{
 	font-family: font1;
-	src: url(fonts/Boncegro FF 4F.otf);
-}
-@font-face{
-	font-family: font2;
 	src: url(fonts/Current-Regular.otf);
 }
 body{
@@ -30,7 +26,7 @@ a{
 	font-size: 30px;
 	line-height: 30px;
 	color: #8000ff;
-	font-family: font2;
+	font-family: font1;
 	transition-duration: 200ms;
 	text-transform: uppercase;
 }
@@ -105,6 +101,7 @@ a{
 	position: relative;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	vertical-align: top;
 }
 #header .logo{
 	padding: 0;
