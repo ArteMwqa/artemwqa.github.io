@@ -1,0 +1,151 @@
+@font-face{
+	font-family: font1;
+	src: url(fonts/Boncegro FF 4F.otf);
+}
+@font-face{
+	font-family: font2;
+	src: url(fonts/Current-Regular.otf);
+}
+body{
+	margin: 0;
+}
+a{
+	text-decoration-line: none;
+}
+#header{
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #ff4400;
+	text-align: center;
+	z-index:  100;
+}
+#header .btn{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	height: 30px;
+	font-size: 30px;
+	line-height: 30px;
+	color: #8000ff;
+	font-family: font2;
+	transition-duration: 200ms;
+	text-transform: uppercase;
+}
+#header .btn:hover{
+	color: #223;
+	text-shadow: 0 0 7px #777;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+#header .btn .menu .cover{
+	position: absolute;
+	left: 0;
+	bottom: 100%;
+	height: 1px;
+	width: 100%;
+}
+#header .btn .menu{
+	position: absolute;
+	left: 0;
+	top: 100%;
+	color: rgba( 79, 100, 9, 0.8);
+	padding: 10px;
+	border-radius: 7px;
+	transition-duration: 0.2s;
+	transform: translateY(-50%) scaleY(0);
+}
+#header .btn:hover .menu{
+	top: calc(100% + 1px);
+	transform: translateY(0) scaleY(1);
+}
+#header .menu .menu-btn{
+	color: #aaa;
+	font-size: 20px;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+#header .menu .menu-btn:hover{
+	color:#fff;
+}
+#header .btn .arr::before{
+	content: "";
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 12.1px;
+	top:calc(50% - 1px);
+	left: 0;
+	background-color: #ffe600;
+	transform: rotate(-45deg);
+	transition-duration: 258ms;
+}
+#header .btn:hover .arr::before{
+	transform: rotate(45deg);
+}
+#header .btn .arr::after{
+	content: "";
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 12.1px;
+	top:calc(50% - 1px);
+	right: 0;
+	background-color: #ffe600;
+	transform: rotate(45deg);
+	transition-duration: 258ms;
+}
+#header .btn:hover .arr::after{
+	transform: rotate(-45deg);
+}
+#header .btn .arr{
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	position: relative;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#header .logo{
+	padding: 0;
+	height: 50px;
+}
+#header .logo img{
+	height: 100%;
+}
+#header .btn1{
+
+}
+#header .btn2{
+
+}
+#content{
+	min-height: 100vh;
+	background-color: #222;
+}
+#footer{
+	font-size: 20px;
+	padding: 50px;
+	background-color: #ff4400;
+	text-align: center;
+}
+#block1{
+
+}
+#block1 .video{
+	width: 100%;
+}
+.block{
+
+}
+#footer span{
+	margin: 10px;
+	color: #111;
+}
+#footer span a{
+	color: #111;
+	text-decoration-line:none;
+}
+#footer span a:hover{
+	text-decoration-line:underline;
+}
