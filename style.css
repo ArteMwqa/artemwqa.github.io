@@ -16,6 +16,11 @@ a{
 	background-color: #ff4400;
 	text-align: center;
 	z-index:  100;
+	height: 50px;
+}
+#header .special-btn{
+	display: inline-block;
+	vertical-align: top;
 }
 #header .btn{
 	position: relative;
@@ -28,6 +33,7 @@ a{
 	color: #8000ff;
 	font-family: font1;
 	transition-duration: 200ms;
+	animation-timing-function: cubic-bezier(.58,0,.4,.99);
 	text-transform: uppercase;
 }
 #header .btn:hover{
@@ -50,7 +56,10 @@ a{
 	padding: 10px;
 	border-radius: 7px;
 	transition-duration: 0.2s;
+	transition-property: transform;
+	transition-delay: 100ms;
 	transform: translateY(-50%) scaleY(0);
+	transition-timing-function: cubic-bezier(.58,0,.4,.99);
 }
 #header .btn:hover .menu{
 	top: calc(100% + 1px);
@@ -60,6 +69,7 @@ a{
 	color: #aaa;
 	font-size: 20px;
 	background-color: rgba(0, 0, 0, 0.6);
+	transition-timing-function: cubic-bezier(.58,0,.4,.99);
 }
 #header .menu .menu-btn:hover{
 	color:#fff;
@@ -93,6 +103,7 @@ a{
 }
 #header .btn:hover .arr::after{
 	transform: rotate(-45deg);
+	vertical-align: top;
 }
 #header .btn .arr{
 	display: inline-block;
@@ -109,6 +120,13 @@ a{
 }
 #header .logo img{
 	height: 100%;
+	animation: pulsing 1.9s infinite;
+	animation-duration: reverse;
+}
+#header .logo:hover img{
+	animation:  wiggling 1s;
+	animation-iteration-count: 4;
+	animation-duration: reverse;
 }
 #header .btn1{
 
@@ -119,6 +137,11 @@ a{
 #content{
 	min-height: 100vh;
 	background-color: #222;
+}
+#block3 iframe{
+	width: 100%;
+	height: calc(100vw / 21 * 9);
+	min-height: 230px;
 }
 #footer{
 	font-size: 20px;
@@ -131,9 +154,60 @@ a{
 }
 #block1 .video{
 	width: 100%;
+/*	position: relative;
+	z-index: 1;*/
 }
 .block{
 
+}
+#block2{
+	background-image: linear-gradient(to bottom, #d303fc,#ff003c);
+	padding:50px;
+	text-align: center;
+}
+#block2 .card{
+	display: inline-block;
+	width: 250px;
+	height: 400px;
+	margin: 25px;
+	background-color: #222;
+	vertical-align: top;
+	transition: 200ms;
+}
+#block2 .card .text{
+	padding: 10px;
+	color: #daff45;
+	transition-duration: 200ms;
+}
+#block2 .card:hover .text{
+	color: #1eff00;
+}
+#block2 .card .text .big{
+	padding: 10px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+#block2 .card .text .small{
+	padding: 10px;
+	font-size: 16px;
+}
+#block2 .card .img{
+	width: 250px;
+	height: 150px;
+	background-size: cover;
+}
+#block2 .card:hover{
+	transform: translateY(-10px);
+	box-shadow:  0 15px 20px #000;
+}
+#block2 a:nth-child(1) .card .img{
+	background-image: url(img/bunnyew.jpg);
+}
+#block2 a:nth-child(2) .card .img{
+	background-image: url(img/ns.jpg);
+}
+#block2 a:nth-child(3) .card .img{
+	background-image: url(img/t.jpg);
 }
 #footer span{
 	margin: 10px;
@@ -145,4 +219,96 @@ a{
 }
 #footer span a:hover{
 	text-decoration-line:underline;
+}
+@keyframes pulsing{
+	0%{transform: scale(1);}
+	25%{transform: scale(1.05);}
+	50%{transform: scale(1);}
+	75%{transform: scale(1.05);}
+	100%{transform: scale(1);}
+}
+@keyframes wiggling{
+	0%{transform: translateX(0%);}
+	25%{transform: translateX(-10%);}
+	50%{transform: translateX(15%);}
+	75%{transform: translateX(-10%);}
+	100%{transform: translateX(0%);}
+}
+@media(max-width: 600px){
+	#header .special-btn{
+		
+	}
+	#header .special-btn-body{
+		position: relative;
+		width: 30px;
+		height: 30px;
+		margin: 10px;
+	}
+	#header .special-btn-menu{
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 80%;
+		transform: translateY(-50%) scaleY(0);
+		transition-duration: 200ms;
+		background-color: rgba(0, 0, 0, 0.8);
+		text-align: left;
+	}
+	#header .special-btn:hover .special-btn-menu{
+		transform: translateY(0) scaleY(1);
+	}
+	#header .line{
+		position: absolute;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		background-color: #def;
+		border-radius: 1.5px;
+		transition-duration: 200ms;
+	}
+	#header .top{
+		top: 0%;
+		left: 0;
+		transform: translateY(0%, -0%);
+	}
+	#header .middle{
+		top: 50%;
+		left: 0;
+		transform: translateY(0%, -50%);
+	}
+	#header .bottom{
+		top: 100%;
+		left: 0;
+		transform: translateY(0%, -100%);
+	}
+	#header .special-btn:hover .top{
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		width: 141%;
+	}
+	#header .special-btn:hover .middle{
+		transform: translateY(-50%) scaleX(0);
+	}
+	#header .special-btn:hover .bottom{
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(-45deg);
+		width: 141%;
+	}
+	#header .btn:hover{
+		height: auto;
+		min-height: 30px
+	}
+	#header .btn .menu{
+		position: relative;
+		transition-duration: 0s;
+		transition-delay: 0s;
+	}
+	#header .logo{
+		height: 50px;
+	}
+	#header .logo:hover{
+		height: 50px;
+	}
 }
